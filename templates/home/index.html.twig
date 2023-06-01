@@ -1,0 +1,496 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>KBM Tour & Travel Agency</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="{{ asset('style_fetnees.css') }}">
+    </head>
+    <body>
+    <!--header section -->
+    <header>
+        <div id="menu-bar" class="fas fa-bars"></div>
+        <a href="#" class="logo"><span>kbm</span><br>fetnees</a>
+        <nav class="nav-bar">
+            <a href="#home">home</a>
+            <a href="#packages">salles</a>
+            <a href="#book">book</a>
+            <a href="#market">market</a>
+            <a href="#trainers">trainers</a>
+            <a href="#workout">workout</a>
+            <a href="#review">review</a>
+            <a href="#contact">contact</a>
+        </nav>
+        <img src="{{ asset('images/default-avatar.png') }}">
+    </header>
+    <!--header end -->
+    <!--home section-->
+    <section class="home" id="home">
+        <div class="video-contner">
+            <img src="{{ asset('images/home-bg-1.jpg') }}" >
+        </div>
+        <section class="about" id="about">
+
+            <div class="content">
+                <h3 class="title">Every day is a chance to become better</h3>
+                <p>The power of taking action each day toward our goals is immeasurable. It creates momentum and builds confidence, which can lead to even bigger changes in the long run. Every day is an opportunity to make progress, to be a little better than you were the day before.</p>
+                <div class="box-container">
+                    <div class="box">
+                        <h3><i class="fas fa-check"></i>body and mind</h3>
+                        <p>The debate about the mind–body connection has been around for millennia.
+
+                            From ancient philosophers and religions to modern science....</p>
+                        <a href="#https://positivepsychology.com/mind-body-connection/" class="btn">read more</a>
+                    </div>
+                    <div class="box">
+                        <h3><i class="fas fa-check"></i>healthy life</h3>
+                        <p>Researchers from the Harvard T.H. Chan School of Public Health conducted a massive study of the impact of health habits on life expectancy....</p>
+                        <a href="https://www.health.harvard.edu/blog/healthy-lifestyle-5-keys-to-a-longer-life-2018070514186#Healthy%20Lifestyle%20and%20Longevity" class="btn">read more</a>
+                    </div>
+                    <div class="box">
+                        <h3><i class="fas fa-check"></i>strategies</h3>
+                        <p>Almost anybody can safely take up walking, and light to moderate exercise is usually fine for healthy adults with no troublesome symptoms....</p>
+                        <a href="https://www.health.harvard.edu/healthbeat/10-tips-for-exercising-safely" class="btn">read more</a>
+                    </div>
+                    <div class="box">
+                        <h3><i class="fas fa-check"></i>workout</h3>
+                        <p>Choose a category that best suits the workout you're searching for. Once in the category, use the sort and filter options to find....</p>
+                        <a href="#workout" class="btn">read more</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+    </section>
+    <!--home ection end-->
+
+    <!--packiges section-->
+    <section class="packages" id="packages">
+        <h1 class="heading">
+            <span>s</span>
+            <span>a</span>
+            <span>l</span>
+            <span>l</span>
+            <span>e</span>
+            <span>s</span>
+        </h1>
+        <div class="box-cont">
+
+            <div class="box">
+                <img src="{{ asset('images/gym-91849_1920.jpg') }}" alt="">
+                <div class="content">
+                    <h3><i class="fas fa-map-marker-alt"></i>paris</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur unde accusantium vero fuga aliquam minima iure quam enim, deserunt quos nostrum amet ad neque dolor magnam accusamus? Maxime, voluptates rem?</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="price">1 mois 1500da<span>1 mois 2000da</span></div>
+                    <a href="book" class="btn">Subscription now</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="{{ asset('images/blog-3.jpg') }}" alt="">
+                <div class="content">
+                    <h3><i class="fas fa-map-marker-alt"></i>hawai</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur unde accusantium vero fuga aliquam minima iure quam enim, deserunt quos nostrum amet ad neque dolor magnam accusamus? Maxime, voluptates rem?</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="price">1 mois 1200da<span>1 mois 1500da</span></div>
+                    <a href="book" class="btn">Subscription now</a>
+                </div>
+            </div>
+            <div class="box">
+                <img src="{{ asset('images/blog-1.jpg') }}" alt="">
+                <div class="content">
+                    <h3><i class="fas fa-map-marker-alt"></i>maldives</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur unde accusantium vero fuga aliquam minima iure quam enim, deserunt quos nostrum amet ad neque dolor magnam accusamus? Maxime, voluptates rem?</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="price">1 mois 2000da<span>1 mois 2500da</span></div>
+                    <a href="book" class="btn">Subscription now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--packages section ends-->
+    <!--book section-->
+    <section class="book" id="book">
+        <h1 class="heading">
+            <span>s</span>
+            <span>u</span>
+            <span>b</span>
+            <span>s</span>
+            <span>c</span>
+            <span>r</span>
+            <span>i</span>
+            <span>p</span>
+            <span>t</span>
+            <span>i</span>
+            <span>o</span>
+            <span>n</span>
+            <span class="space"></span>
+            <span>n</span>
+            <span>o</span>
+            <span>w</span>
+        </h1>
+        <div class="row">
+            <div class="image">
+                <img src="file:///C:/Users/BACHAR/Downloads/undraw_travel_plans_re_103r%20(1).svg" alt="">
+            </div>
+            <form action="">
+                <div class="input-box">
+                    <h3>first name</h3>
+                    <input type="text"placeholder="first name" name="fname">
+                </div>
+                <div class="input-box">
+                    <h3>last name</h3>
+                    <input type="text"placeholder="last name" name="lname">
+                </div>
+                <div class="input-box">
+                    <h3>email</h3>
+                    <input type="email"placeholder="put your email" name="emaile">
+                </div>
+                <div class="input-box">
+                    <h3>Subscription Plan</h3>
+                    <input type="number"placeholder="put your number of monthe" name="number">
+                </div>
+                <div class="input-box">
+                    <h3>phone number</h3>
+                    <input type="number"placeholder="put your phone number" name="phone">
+                </div>
+                <div >
+                    <input type="submit" value="book now" class="btn">
+                </div>
+
+            </form>
+        </div>
+    </section>
+    <!--book section ends-->
+    <!-- trainers section starts  -->
+
+    <section class="trainers" id="trainers">
+
+        <h1 class="heading">
+            <span>t</span>
+            <span>r</span>
+            <span>a</span>
+            <span>i</span>
+            <span>n</span>
+            <span>e</span>
+            <span>r</span>
+            <span>s</span>
+        </h1>
+
+        <div class="box-container">
+            <div class="box">
+                <img src="{{ asset('images/trainer-3.jpg') }}" alt="">
+                <div class="content">
+                    <span>expert trainer</span>
+                    <h3>chaker herrem</h3>
+                    <div class="share">
+                        <a href="https://www.facebook.com/chaker.herrem" class="fab fa-facebook-f"></a>
+                        <a href="https://www.instagram.com/chaker_hunter/" class="fa-brands fa-instagram"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <img src="{{ asset('images/trainer-1.jpg') }}" alt="">
+                <div class="content">
+                    <span>expert trainer</span>
+                    <h3>houssam raouf</h3>
+                    <div class="share">
+                        <a href="https://www.facebook.com/profile.php?id=100004317077929" class="fab fa-facebook-f"></a>
+                        <a href="https://www.instagram.com/houssam1312/" class="fa-brands fa-instagram"></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="{{ asset('images/bodybuilding-3909596_1920.jpg') }}" alt="">
+                <div class="content">
+                    <span>expert trainer</span>
+                    <h3>tarek djaballah</h3>
+                    <div class="share">
+                        <a href="https://www.facebook.com/tarek.maldini" class="fab fa-facebook-f"></a>
+                        <a href="https://www.instagram.com/tarek_djaballah3/" class="fa-brands fa-instagram"></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- trainers section ends -->
+    <section class="features" id="workout">
+
+        <h1 class="heading">
+            <span>w</span>
+            <span>o</span>
+            <span>r</span>
+            <span>k</span>
+            <span>o</span>
+            <span>u</span>
+            <span>t</span>
+        </h1>
+
+        <div class="box-container">
+
+            <div class="box">
+                <div class="image">
+                    <img src="{{ asset('images/f-img-1.jpg') }}" alt="">
+                </div>
+                <div class="content">
+                    <img src="{{ asset('images/icon-1.png') }}" alt="">
+                    <h3>body building</h3>
+                    <p>This 4-day program will help intermediate and advanced trainees gain size and strength. Rest-pause set, drop sets, and negatives will kick your muscle gains into high gear!</p>
+                    <a href="https://www.muscleandstrength.com/workouts/8-week-hypertrophy-workout" class="btn">read more</a>
+                </div>
+            </div>
+
+            <div class="box second">
+                <div class="image">
+                    <img src="{{ asset('images/f-img-2.jpg') }}" alt="">
+                </div>
+                <div class="content">
+                    <img src="{{ asset('images/icon-2.png') }}" alt="">
+                    <h3>gym for men</h3>
+                    <p>This workout is designed to increase your muscle mass as much as possible in 10 weeks. Works each muscle group hard once per week using mostly heavy compound exercises.</p>
+                    <a href="https://www.muscleandstrength.com/workouts/10-week-mass-building-program.html" class="btn">read more</a>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="image">
+                    <img src="{{ asset('images/blog-2.jpg') }}" alt="">
+                </div>
+                <div class="content">
+                    <img src="{{ asset('images/icon-3.png') }}" alt="">
+                    <h3>gym for women</h3>
+                    <p>This 12 week women's specific training program is perfect for any healthy woman who is looking to transform her body through a good weight lifting program.</p>
+                    <a href="https://www.muscleandstrength.com/workouts/muscle-and-strength-womens-workout" class="btn">read more</a>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- features section ends -->
+    <!--review section -->
+    <section class="review" id="review">
+        <h1 class="heading">
+            <span>r</span>
+            <span>e</span>
+            <span>v</span>
+            <span>i</span>
+            <span>e</span>
+            <span>w</span>
+        </h1>
+        <div class="swiper review_slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="box">
+                        <img src="{{ asset('images/153525485_3663239593795194_8107627339251510969_nn.jpg') }}" alt="">
+                        <h3>țặřěk djặßặłłặĥ </h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet totam ab dolorum excepturi sint similique? Deleniti odit doloremque, qui cupiditate quisquam quas, dignissimos in quam officiis amet et dolorem consequuntur.</p>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="box">
+                        <img src="{{ asset('images/75419050_776022629501800_8039543281865981952_n.jpg') }}" alt="">
+                        <h3>Abdelkrim Lemouis </h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet totam ab dolorum excepturi sint similique? Deleniti odit doloremque, qui cupiditate quisquam quas, dignissimos in quam officiis amet et dolorem consequuntur.</p>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="box">
+                        <img src="{{ asset('images/Snapchat-1661306311.jpg') }}" alt="">
+                        <h3>bachar boumerta</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet totam ab dolorum excepturi sint similique? Deleniti odit doloremque, qui cupiditate quisquam quas, dignissimos in quam officiis amet et dolorem consequuntur.</p>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="box">
+                        <img src="{{ asset('images/28424312_1823920841241668_2631519646087805920_o.jpg') }}" alt="">
+                        <h3>nouasria mohamed</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet totam ab dolorum excepturi sint similique? Deleniti odit doloremque, qui cupiditate quisquam quas, dignissimos in quam officiis amet et dolorem consequuntur.</p>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="box">
+                        <img src="{{ asset('images/298472291_2272286812925199_1315632022593738581_n.jpg') }}" alt="">
+                        <h3>houssam raouf</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet totam ab dolorum excepturi sint similique? Deleniti odit doloremque, qui cupiditate quisquam quas, dignissimos in quam officiis amet et dolorem consequuntur.</p>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="box">
+                        <img src="{{ asset('images/chm.jpg') }}" alt="">
+                        <h3>chaker herrem</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet totam ab dolorum excepturi sint similique? Deleniti odit doloremque, qui cupiditate quisquam quas, dignissimos in quam officiis amet et dolorem consequuntur.</p>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--review section ends-->
+    <!--contact section-->
+    <section class="contact" id="contact">
+        <h1 class="heading">
+            <span>c</span>
+            <span>o</span>
+            <span>n</span>
+            <span>t</span>
+            <span>a</span>
+            <span>c</span>
+            <span>t</span>
+        </h1>
+        <div class="row">
+            <form action="" method="post">
+                <div class="input-box">
+                    <input type="text" name="fullName" placeholder="name">
+                    <input type="email" name="email" placeholder="email">
+                </div>
+                <div class="input-box">
+                    <input type="number" name="number" placeholder="number">
+                    <input type="text" name="subject" placeholder="subject">
+                </div>
+                <textarea name="message" id="" cols="30" rows="10" placeholder="message"></textarea>
+                <input type="submit" name="submit" value="send" class="btn">
+
+            </form>
+        </div>
+    </section>
+    <!--contact section ends-->
+    <!--footer section-->
+    <section class="footer">
+        <div class="box-cont">
+            <div class="box">
+                <h3>about us</h3>
+                <p>1.Simple and Clear Subscription Process: The subscription process on the website should be easy to understand and navigate. It should be simple and clear from start to finish.<br>
+
+                    2.Online Membership Plans: Customers should have the option to view different membership plans online, including their price, duration, and benefits. This helps them choose a plan that suits their budget, schedule, and fitness goals.<br>
+
+                    3.Registration Form: A registration form should be provided on the website, where clients can input their personal details, payment method, and other relevant information. The form should be easy to fill out, with clear instructions and guidance.<br></p>
+            </div>
+            <div class="box">
+                <h3>quick links</h3>
+                <a href="#home">home</a>
+                <a href="#packages">salles</a>
+                <a href="#book">book</a>
+                <a href="#market">market</a>
+                <a href="#trainers">trainers</a>
+                <a href="#workout">workout</a>
+                <a href="#review">review</a>
+                <a href="#contact">contact</a>
+            </div>
+            <div class="box">
+                <h3>follow us</h3>
+                <a href="https://www.facebook.com/bachar.boumerta.9"><i class="fa-brands fa-facebook"></i>facebook</a>
+                <a href="https://www.instagram.com/bacharboumerta/"><i class="fa-brands fa-instagram"></i>instagram</a>
+                <a href="https://twitter.com/"><i class="fa-brands fa-twitter"></i>twiter</a>
+                <a href="https://www.tiktok.com/"><i class="fa-brands fa-tiktok"></i>tiktok</a>
+                <a href="https://mail.google.com/mail/u/0/#inbox"><i class="fa-regular fa-envelope"></i>boumertabachar@gmail.com</a>
+            </div>
+        </div>
+        <hr>
+        <!-- <div class="c">
+             <h1>creted by:</h1>
+             <div class="creat">
+                 <div class="slider">
+                     <div class="box">
+                         <img src="image/75419050_776022629501800_8039543281865981952_n.jpg" alt="">
+                         <h3>Abdelkrim Lemouis </h3>
+                         <p><span>nome   :</span>Lemouis </p>
+                         <p><span>prenom :</span>abdelkrim</p>
+                         <p><span>group  :</span>g03</p>
+                         <p><span>tel    :</span>0664226891</p>
+                         <p class="gmail"><span>gmail  :</span></p>
+                     </div>
+                 </div>
+                 <div class="slider">
+                      <div class="box">
+                         <img src="image/Snapchat-1661306311.jpg" alt="">
+                         <h3>bachar boumerta</h3>
+                         <p><span>nome   :</span>boumerta</p>
+                         <p><span>prenom :</span>mohamed bachir</p>
+                         <p><span>group  :</span>g03</p>
+                         <p><span>tel    :</span>0669044179</p>
+                         <p class="gmail"><span>gmail  :</span><a href="https://mail.google.com/mail/u/0/#inbox">boumertabachar@gmail.com</a></p>
+                     </div>
+                 </div>
+             </div>
+        </div>-->
+    </section>
+    <!--footer section ends-->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="{{ asset('js/script.js') }}"></script>
+    </body>
+{% endblock %}
