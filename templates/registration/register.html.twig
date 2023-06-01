@@ -23,6 +23,27 @@
                         </div>
 
                         <div class="mb-3">
+                            {{ form_label(registrationForm.firstName) }}
+                            {{ form_widget(registrationForm.firstName, { 'attr': {'class': 'form-control'} }) }}
+                        </div>
+
+                        <div class="mb-3">
+                            {{ form_label(registrationForm.lastName) }}
+                            {{ form_widget(registrationForm.lastName, { 'attr': {'class': 'form-control'} }) }}
+                        </div>
+
+                        <div class="mb-3">
+                            {{ form_label(registrationForm.age) }}
+                            {{ form_widget(registrationForm.age, { 'attr': {'class': 'form-control'} }) }}
+                        </div>
+
+
+                        <div class="mb-3">
+                            {{ form_label(registrationForm.city) }}
+                            {{ form_widget(registrationForm.city, { 'attr': {'class': 'form-control'} }) }}
+                        </div>
+
+                        <div class="mb-3">
                             {{ form_label(registrationForm.plainPassword, 'Password') }}
                             {{ form_widget(registrationForm.plainPassword, { 'attr': {'class': 'form-control'} }) }}
                         </div>
