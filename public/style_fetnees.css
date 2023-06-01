@@ -614,14 +614,7 @@ margin: 10px 0;
     text-decoration:none;
 
 }
-.trainers .box-container {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: (minmax(29rem, 1fr))[auto-fit];
-        grid-template-columns: repeat(auto-fit, minmax(29rem, 1fr));
-    gap: 1.5rem;
-  }
-  
+
   .trainers .box-container .box {
     height: 40rem;
     overflow: hidden;
@@ -772,14 +765,6 @@ margin: 10px 0;
   .about .content .box-container .box h3 i {
     padding-right: 1.5rem;
     color:var(--color);
-  }
-  .features .box-container {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: (minmax(32rem, 1fr))[auto-fit];
-        grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
-    gap: 1.5rem;
-    gap: 0;
   }
   
   .features .box-container .box {
