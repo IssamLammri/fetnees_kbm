@@ -1,0 +1,16 @@
+{{ form_start(form) }}
+    {{ form_start(form) }}
+<div class="form-group">
+    {{ form_label(form.name) }}
+    {{ form_widget(form.name, { 'attr': {'class': 'form-control', 'placeholder': 'Enter name'} }) }}
+</div>
+<div class="form-group">
+    {{ form_label(form.description) }}
+    {{ form_widget(form.description, { 'attr': {'class': 'form-control', 'placeholder': 'Enter description'} }) }}
+</div>
+<div class="form-group">
+    {{ form_label(form.content) }}
+    {{ form_widget(form.content, { 'attr': {'class': 'form-control', 'placeholder': 'Enter content'} }) }}
+</div>
+<button class="btn">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}
