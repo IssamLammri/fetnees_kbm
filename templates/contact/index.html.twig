@@ -4,9 +4,17 @@
 
 {% block body %}
     <div class="container">
+        <div class="mt-4 text-end">
+            <a href="{{ path('content_management') }}" class="btn btn-outline-primary">Admin</a>
+            <a href="{{ path('app_home') }}" class="btn btn-outline-secondary">KBM FETNEES</a>
+        </div>
         <h1>Contact list</h1>
 
-        <ul class="list-group">
+        <div class="mt-4">
+            <input type="text" id="searchInput" class="form-control mb-3" placeholder="Search..." oninput="filterContacts()">
+        </div>
+
+        <ul class="list-group" id="contactList">
             {% for contact in contacts %}
                 <li class="list-group-item">
                     <div class="d-flex justify-content-between">
@@ -29,4 +37,27 @@
 
         <a href="{{ path('app_contact_new') }}" class="btn btn-success mt-4">Create new</a>
     </div>
+
+    <script>
+        function filterContacts() {
+            var input, filter, ul, li, name, email, i, txtValue;
+            input = document.getElementById('searchInput');
+            filter = input.value.toUpperCase();
+            ul = document.getElementById('contactList');
+            li = ul.getElementsByTagName('li');
+
+            for (i = 0; i < li.length; i++) {
+                name = li[i].getElementsByTagName('h5')[0];
+                email = li[i].getElementsByTagName('p')[0];
+                txtValue = name.textContent || name.innerText;
+                txtValue += email.textContent || email.innerText;
+
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = '';
+                } else {
+                    li[i].style.display = 'none';
+                }
+            }
+        }
+    </script>
 {% endblock %}
