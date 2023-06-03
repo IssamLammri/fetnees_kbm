@@ -3,41 +3,30 @@
 {% block title %}Contact index{% endblock %}
 
 {% block body %}
-    <h1>Contact index</h1>
+    <div class="container">
+        <h1>Contact list</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>FullName</th>
-                <th>Email</th>
-                <th>PhoneNumber</th>
-                <th>Subjet</th>
-                <th>Message</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for contact in contacts %}
-            <tr>
-                <td>{{ contact.id }}</td>
-                <td>{{ contact.fullName }}</td>
-                <td>{{ contact.email }}</td>
-                <td>{{ contact.phoneNumber }}</td>
-                <td>{{ contact.subjet }}</td>
-                <td>{{ contact.message }}</td>
-                <td>
-                    <a href="{{ path('app_contact_show', {'id': contact.id}) }}">show</a>
-                    <a href="{{ path('app_contact_edit', {'id': contact.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="7">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+        <ul class="list-group">
+            {% for contact in contacts %}
+                <li class="list-group-item">
+                    <div class="d-flex justify-content-between">
+                        <h5>{{ contact.fullName }}</h5>
+                        <div>
+                            <a href="{{ path('app_contact_show', {'id': contact.id}) }}" class="btn btn-primary me-2">Show</a>
+                            <a href="{{ path('app_contact_edit', {'id': contact.id}) }}" class="btn btn-secondary">Edit</a>
+                        </div>
+                    </div>
+                    <p class="mb-0"><strong>Email:</strong> {{ contact.email }}</p>
+                    <p class="mb-0"><strong>Phone Number:</strong> {{ contact.phoneNumber }}</p>
+                    <p class="mb-0"><strong>Subject:</strong> {{ contact.subjet }}</p>
+                    <p class="mb-0"><strong>Message:</strong> {{ contact.message }}</p>
+                </li>
+                <br>
+            {% else %}
+                <li class="list-group-item">no records found</li>
+            {% endfor %}
+        </ul>
 
-    <a href="{{ path('app_contact_new') }}">Create new</a>
+        <a href="{{ path('app_contact_new') }}" class="btn btn-success mt-4">Create new</a>
+    </div>
 {% endblock %}
