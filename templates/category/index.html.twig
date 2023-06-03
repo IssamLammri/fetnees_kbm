@@ -3,40 +3,51 @@
 {% block title %}Category index{% endblock %}
 
 {% block body %}
-    <br><br><br>
     <div class="container">
-        <h1>Category index</h1>
+        <h1>Category list</h1>
 
-        <table class="table">
-            <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Content</th>
-                <th>Actions</th>
-            </tr>
-            </thead>
-            <tbody>
+        <div class="row">
+            <div class="col-md-6">
+                <label for="searchInput"></label><input type="text" class="form-control mb-3" id="searchInput" placeholder="Search..." oninput="filterCategories()">
+            </div>
+        </div>
+
+        <ul class="list-group" id="categoryList">
             {% for category in categories %}
-                <tr>
-                    <td>{{ category.id }}</td>
-                    <td>{{ category.name }}</td>
-                    <td>{{ category.description }}</td>
-                    <td>{{ category.content }}</td>
-                    <td>
-                        <a href="{{ path('app_category_show', {'id': category.id}) }}" class="btn btn-primary">Show</a>
-                        <a href="{{ path('app_category_edit', {'id': category.id}) }}" class="btn btn-warning">Edit</a>
-                    </td>
-                </tr>
+                <li class="list-group-item">
+                    <h5>{{ category.name }}</h5>
+                    <p>{{ category.description }}</p>
+                    <div class="d-flex justify-content-end">
+                        <a href="{{ path('app_category_show', {'id': category.id}) }}" class="btn btn-primary me-2">Show</a>
+                        <a href="{{ path('app_category_edit', {'id': category.id}) }}" class="btn btn-secondary">Edit</a>
+                    </div>
+                </li>
             {% else %}
-                <tr>
-                    <td colspan="5">No records found</td>
-                </tr>
+                <li class="list-group-item">No records found</li>
             {% endfor %}
-            </tbody>
-        </table>
+        </ul>
 
-        <a href="{{ path('app_category_new') }}" class="btn btn-success">Create new</a>
+        <a href="{{ path('app_category_new') }}" class="btn btn-success mt-4">Create new</a>
     </div>
+
+    <script>
+        function filterCategories() {
+            var input, filter, ul, li, h5, i, txtValue;
+            input = document.getElementById('searchInput');
+            filter = input.value.toUpperCase();
+            ul = document.getElementById('categoryList');
+            li = ul.getElementsByTagName('li');
+
+            for (i = 0; i < li.length; i++) {
+                h5 = li[i].getElementsByTagName('h5')[0];
+                txtValue = h5.textContent || h5.innerText;
+
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = '';
+                } else {
+                    li[i].style.display = 'none';
+                }
+            }
+        }
+    </script>
 {% endblock %}
