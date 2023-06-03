@@ -1,0 +1,19 @@
+{{ form_start(form) }}
+<div class="mb-3">
+    <label for="{{ form.trainerFullName.vars.id }}" class="form-label">Trainer Full Name</label>
+    {{ form_widget(form.trainerFullName, {'attr': {'class': 'form-control'}}) }}
+</div>
+<div class="mb-3">
+    <label for="{{ form.trainerRank.vars.id }}" class="form-label">Trainer Rank</label>
+    {{ form_widget(form.trainerRank, {'attr': {'class': 'form-control'}}) }}
+</div>
+<div class="mb-3">
+    <label for="{{ form.facebookLink.vars.id }}" class="form-label">Facebook Link</label>
+    {{ form_widget(form.facebookLink, {'attr': {'class': 'form-control'}}) }}
+</div>
+<div class="mb-3">
+    <label for="{{ form.instegramLink.vars.id }}" class="form-label">Instagram Link</label>
+    {{ form_widget(form.instegramLink, {'attr': {'class': 'form-control'}}) }}
+</div>
+<button class="btn btn-primary">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}

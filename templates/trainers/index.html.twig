@@ -1,0 +1,71 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Trainers index{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="mt-4 text-end">
+            <a href="{{ path('content_management') }}" class="btn btn-outline-primary">Admin</a>
+            <a href="{{ path('app_home') }}" class="btn btn-outline-secondary">KBM FETNEES</a>
+        </div>
+        <h1 class="text-center">Trainers index</h1>
+
+        <div class="mb-3">
+            <input type="text" id="searchInput" class="form-control" placeholder="Search by name or rank">
+        </div>
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>TrainerFullName</th>
+                <th>TrainerRank</th>
+                <th>FacebookLink</th>
+                <th>InstegramLink</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for trainer in trainers %}
+                <tr>
+                    <td>{{ trainer.id }}</td>
+                    <td>{{ trainer.trainerFullName }}</td>
+                    <td>{{ trainer.trainerRank }}</td>
+                    <td>{{ trainer.facebookLink }}</td>
+                    <td>{{ trainer.instegramLink }}</td>
+                    <td>
+                        <a href="{{ path('app_trainers_show', {'id': trainer.id}) }}" class="btn btn-primary me-2">Show</a>
+                        <a href="{{ path('app_trainers_edit', {'id': trainer.id}) }}" class="btn btn-secondary">Edit</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="6">No records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <a href="{{ path('app_trainers_new') }}" class="btn btn-success mt-4">Create new</a>
+    </div>
+
+    <script>
+        const searchInput = document.getElementById('searchInput');
+        const rows = document.querySelectorAll('tbody tr');
+
+        searchInput.addEventListener('input', function () {
+            const searchQuery = this.value.toLowerCase();
+
+            rows.forEach(function (row) {
+                const fullName = row.querySelector('td:nth-child(2)').textContent.toLowerCase();
+                const rank = row.querySelector('td:nth-child(3)').textContent.toLowerCase();
+
+                if (fullName.includes(searchQuery) || rank.includes(searchQuery)) {
+                    row.style.display = 'table-row';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        });
+    </script>
+{% endblock %}
