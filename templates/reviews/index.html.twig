@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Reviews index{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="mt-4 text-end">
+            <a href="{{ path('content_management') }}" class="btn btn-outline-primary">Admin</a>
+            <a href="{{ path('app_home') }}" class="btn btn-outline-secondary">KBM FETNEES</a>
+        </div>
+        <h1>Reviews list</h1>
+
+        <div class="mb-3">
+            <input type="text" id="searchInput" class="form-control" placeholder="Search by full name or comment">
+        </div>
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Full Name</th>
+                <th>Comment</th>
+                <th>Star</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for review in reviews %}
+                <tr>
+                    <td>{{ review.id }}</td>
+                    <td>{{ review.fullName }}</td>
+                    <td>{{ review.comment }}</td>
+                    <td>{{ review.star }}</td>
+                    <td>
+                        <a href="{{ path('app_reviews_show', {'id': review.id}) }}" class="btn btn-primary me-2">Show</a>
+                        <a href="{{ path('app_reviews_edit', {'id': review.id}) }}" class="btn btn-secondary">Edit</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="5">No records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <a href="{{ path('app_reviews_new') }}" class="btn btn-success mt-4">Create new</a>
+    </div>
+
+    <script>
+        const searchInput = document.getElementById('searchInput');
+
+        searchInput.addEventListener('input', function() {
+            const searchTerm = searchInput.value.toLowerCase();
+
+            Array.from(document.querySelectorAll('tbody tr')).forEach(function(row) {
+                const fullName = row.children[1].textContent.toLowerCase();
+                const comment = row.children[2].textContent.toLowerCase();
+
+                if (fullName.includes(searchTerm) || comment.includes(searchTerm)) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        });
+    </script>
+{% endblock %}
