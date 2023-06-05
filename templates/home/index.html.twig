@@ -31,46 +31,20 @@
         <img src="{{ asset('images/default-avatar.png') }}">
     </header>
     <!--header end -->
-    <!--home section-->
     <section class="home" id="home">
         <div class="video-contner">
-            <img src="{{ asset('images/home-bg-1.jpg') }}" >
+            <img src="{{ asset('images/home-bg-1.jpg') }}"  alt="">
         </div>
-        <section class="about" id="about">
+        <div class="content">
+            <h1>make this year <br><span> your year</span></h1>
+            <p>Define your limits and pursue your fitness goals with a complimentary<br> all-access gym pass!<br><span>Check our market </span></p>
+        </div>
+        <i class="fa-solid fa-arrow-down-long fa-bounce fa-2xl" style="color: var(--color)"></i>
 
-            <div class="content">
-                <h3 class="title">Every day is a chance to become better</h3>
-                <p>The power of taking action each day toward our goals is immeasurable. It creates momentum and builds confidence, which can lead to even bigger changes in the long run. Every day is an opportunity to make progress, to be a little better than you were the day before.</p>
-                <div class="box-container">
-                    <div class="box">
-                        <h3><i class="fas fa-check"></i>body and mind</h3>
-                        <p>The debate about the mind–body connection has been around for millennia.
-
-                            From ancient philosophers and religions to modern science....</p>
-                        <a href="#https://positivepsychology.com/mind-body-connection/" class="btn">read more</a>
-                    </div>
-                    <div class="box">
-                        <h3><i class="fas fa-check"></i>healthy life</h3>
-                        <p>Researchers from the Harvard T.H. Chan School of Public Health conducted a massive study of the impact of health habits on life expectancy....</p>
-                        <a href="https://www.health.harvard.edu/blog/healthy-lifestyle-5-keys-to-a-longer-life-2018070514186#Healthy%20Lifestyle%20and%20Longevity" class="btn">read more</a>
-                    </div>
-                    <div class="box">
-                        <h3><i class="fas fa-check"></i>strategies</h3>
-                        <p>Almost anybody can safely take up walking, and light to moderate exercise is usually fine for healthy adults with no troublesome symptoms....</p>
-                        <a href="https://www.health.harvard.edu/healthbeat/10-tips-for-exercising-safely" class="btn">read more</a>
-                    </div>
-                    <div class="box">
-                        <h3><i class="fas fa-check"></i>workout</h3>
-                        <p>Choose a category that best suits the workout you're searching for. Once in the category, use the sort and filter options to find....</p>
-                        <a href="#workout" class="btn">read more</a>
-                    </div>
-                </div>
-
-            </div>
-
-        </section>
+        <a href="market/market.php" >market</a>
 
     </section>
+    <!--home section-->
     <!--home ection end-->
 
     <!--packiges section-->
@@ -84,55 +58,23 @@
             <span>s</span>
         </h1>
         <div class="box-cont">
-
+            {% for room in rooms %}
             <div class="box">
-                <img src="{{ asset('images/gym-91849_1920.jpg') }}" alt="">
+                {% set pathImage = 'images/room' ~ room.id ~ '.jpg'%}
+                <img src="{{ asset(pathImage) }}" alt="">
                 <div class="content">
-                    <h3><i class="fas fa-map-marker-alt"></i>paris</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur unde accusantium vero fuga aliquam minima iure quam enim, deserunt quos nostrum amet ad neque dolor magnam accusamus? Maxime, voluptates rem?</p>
+                    <h3><i class="fas fa-map-marker-alt"></i>{{ room.roomName }}</h3>
+                    <p>{{ room.roomDescription }}</p>
                     <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                        {% for _ in 1..room.star %}
+                            <i class="fas fa-star"></i>
+                        {% endfor %}
                     </div>
-                    <div class="price">1 mois 1500da<span>1 mois 2000da</span></div>
-                    <a href="book" class="btn">Subscription now</a>
+                    <div class="price">1 mois {{ room.price }}da<span>1 mois {{ room.oldPrice }}da</span></div>
+                    <a href="#book" class="btn">Subscription now</a>
                 </div>
             </div>
-            <div class="box">
-                <img src="{{ asset('images/blog-3.jpg') }}" alt="">
-                <div class="content">
-                    <h3><i class="fas fa-map-marker-alt"></i>hawai</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur unde accusantium vero fuga aliquam minima iure quam enim, deserunt quos nostrum amet ad neque dolor magnam accusamus? Maxime, voluptates rem?</p>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <div class="price">1 mois 1200da<span>1 mois 1500da</span></div>
-                    <a href="book" class="btn">Subscription now</a>
-                </div>
-            </div>
-            <div class="box">
-                <img src="{{ asset('images/blog-1.jpg') }}" alt="">
-                <div class="content">
-                    <h3><i class="fas fa-map-marker-alt"></i>maldives</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur unde accusantium vero fuga aliquam minima iure quam enim, deserunt quos nostrum amet ad neque dolor magnam accusamus? Maxime, voluptates rem?</p>
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <div class="price">1 mois 2000da<span>1 mois 2500da</span></div>
-                    <a href="book" class="btn">Subscription now</a>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </section>
     <!--packages section ends-->
@@ -205,17 +147,19 @@
         </h1>
 
         <div class="box-container">
-            <div class="box">
-                <img src="{{ asset('images/trainer-3.jpg') }}" alt="">
-                <div class="content">
-                    <span>expert trainer</span>
-                    <h3>chaker herrem</h3>
-                    <div class="share">
-                        <a href="https://www.facebook.com/chaker.herrem" class="fab fa-facebook-f"></a>
-                        <a href="https://www.instagram.com/chaker_hunter/" class="fa-brands fa-instagram"></a>
+            {% for trainer in trainers %}
+                <div class="box">
+                    <img src="{{ asset('images/trainer-3.jpg') }}" alt="">
+                    <div class="content">
+                        <span>{{ trainer }}</span>
+                        <h3>chaker herrem</h3>
+                        <div class="share">
+                            <a href="https://www.facebook.com/chaker.herrem" class="fab fa-facebook-f"></a>
+                            <a href="https://www.instagram.com/chaker_hunter/" class="fa-brands fa-instagram"></a>
+                        </div>
                     </div>
                 </div>
-            </div>
+            {% endfor %}
             <div class="box">
                 <img src="{{ asset('images/trainer-1.jpg') }}" alt="">
                 <div class="content">
@@ -400,6 +344,43 @@
         </div>
     </section>
     <!--review section ends-->
+
+    <section class="about" id="about">
+
+
+        <div class="image">
+            <img src="{{ asset('images/about-img.jpg') }}" alt="">
+        </div>
+        <div class="content">
+            <h3 class="title">Every day is a chance to become better</h3>
+            <p>The power of taking action each day toward our goals is immeasurable. It creates momentum and builds confidence, which can lead to even bigger changes in the long run. Every day is an opportunity to make progress, to be a little better than you were the day before.</p>
+            <div class="box-container">
+                <div class="box">
+                    <h3><i class="fas fa-check"></i>body and mind</h3>
+                    <p>The debate about the mind–body connection has been around for millennia.
+
+                        From ancient philosophers and religions to modern science....</p>
+                    <a href="#https://positivepsychology.com/mind-body-connection/" class="btn">read more</a>
+                </div>
+                <div class="box">
+                    <h3><i class="fas fa-check"></i>healthy life</h3>
+                    <p>Researchers from the Harvard T.H. Chan School of Public Health conducted a massive study of the impact of health habits on life expectancy....</p>
+                    <a href="https://www.health.harvard.edu/blog/healthy-lifestyle-5-keys-to-a-longer-life-2018070514186#Healthy%20Lifestyle%20and%20Longevity" class="btn">read more</a>
+                </div>
+                <div class="box">
+                    <h3><i class="fas fa-check"></i>strategies</h3>
+                    <p>Almost anybody can safely take up walking, and light to moderate exercise is usually fine for healthy adults with no troublesome symptoms....</p>
+                    <a href="https://www.health.harvard.edu/healthbeat/10-tips-for-exercising-safely" class="btn">read more</a>
+                </div>
+                <div class="box">
+                    <h3><i class="fas fa-check"></i>workout</h3>
+                    <p>Choose a category that best suits the workout you're searching for. Once in the category, use the sort and filter options to find....</p>
+                    <a href="#workout" class="btn">read more</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
     <!--contact section-->
     <section class="contact" id="contact">
         <h1 class="heading">
