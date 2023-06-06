@@ -32,7 +32,6 @@ class HomeController extends AbstractController
         $trainers = $this->trainersRepository->findAll();
         $reviews = $this->reviewsRepository->findAll();
         $category = $this->categoryRepository->findAll();
-        dump($category);
         return $this->render('home/index.html.twig', [
             'controller_name' => 'HomeController',
             'rooms' => $rooms,
