@@ -1,0 +1,329 @@
+{% extends 'base_home.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>KBM Tour & Travel Agency</title>
+        <link rel="stylesheet" href="{{ asset('smarket.css') }}">
+    </head>
+    <body>
+    <!--header section -->
+    <header>
+        <div id="menu-bar" class="fas fa-bars"></div>
+        <a href="../index.php" class="logo"><span>kbm</span><br>fetnees</a>
+        <nav class="nav-bar">
+            <a href="../index.php/#home">home</a>
+            <a href="../index.php/#packges">salles</a>
+            <a href="../index.php/#book">book</a>
+            <a href="market/market.html" target="_blank">market</a>
+            <a href="../index.php/#trainers">trainers</a>
+            <a href="../index.php/#workout">workout</a>
+            <a href="../index.php/#review">review</a>
+            <a href="../index.php/#contact">contact</a>
+        </nav>
+
+
+    </header>
+    <!--header end -->
+    <section class="hero" id="hero">
+        <img src="{{ asset('images/pngwing.com.png') }}" alt="">
+        <h4>Trade-in-offer</h4>
+        <h2>Super value deals</h2>
+        <h1>On all products</h1>
+        <p>Save more with coupons and up to 70% off!</p>
+        <button>Shop now</button>
+    </section>
+    <h1 class="heading">
+        <span>E</span>
+        <span>Q</span>
+        <span>U</span>
+        <span>I</span>
+        <span>P</span>
+        <span>E</span>
+        <span>M</span>
+        <span>E</span>
+        <span>N</span>
+        <span>T</span>
+        <span>S</span>
+    </h1>
+    <!--product--1-->
+    <section class="product" id="product">
+        <div class="pro">
+            <img src="{{ asset('images/p1.jpg') }}" style="width:100%;" alt="">
+
+
+            <div class="des">
+                <h5>Leg machine</h5>
+
+                <h4>180.000DA</h4>
+                <!--<div class="star">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div> --->
+
+            </div>
+            <div class="glow-wrap">
+                <i class="glow"></i>
+            </div>
+
+            <a href="productsd/sproduct.html" class="btn">View More</a>
+
+        </div>
+        </div>
+    </section>
+    <!--product--2-->
+    <section class="product2" id="product2">
+        <div class="pro2">
+            <img src="{{ asset('images/p2.jpg') }}" alt="">
+
+
+            <div class="des2">
+                <h5>Pull-up parallel bars</h5>
+
+                <h4>50.000DA</h4>
+                <!--<div class="star">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div> --->
+
+            </div>
+            <div class="glow-wrap2">
+                <i class="glow2"></i>
+            </div>
+            <a href="productsd/sp2.html" class="btn">View More</a>
+
+        </div>
+
+
+    </section>
+    <!--product--3-->
+    <section class="product3" id="produc3t">
+        <div class="pro3">
+            <img src="{{ asset('images/p3.jpg') }}" alt="">
+
+
+            <div class="des3">
+                <h5>Dumbbells with bras</h5>
+
+                <h4>10.000DA</h4>
+                <!--<div class="star">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div> --->
+
+            </div>
+            <div class="glow-wrap3">
+                <i class="glow3"></i>
+            </div>
+            <a href="productsd/sp3.html" class="btn">View More</a>
+
+        </div>
+    </section>
+    <!--product--4-->
+    <section class="product4" id="product4">
+        <div class="pro4">
+            <img src="{{ asset('images/p4.jpg') }}" alt="">
+
+
+            <div class="des4">
+                <h5>Fetnees Bench</h5>
+
+                <h4>30.000DA</h4>
+                <!--<div class="star">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div> --->
+
+            </div>
+            <div class="glow-wrap4">
+                <i class="glow4"></i>
+            </div>
+            <a href="productsd/sp4.html" class="btn">View More</a>
+
+        </div>
+    </section>
+    <!--product--5-->
+    <section class="product5" id="product5">
+        <div class="pro5">
+            <img src="{{ asset('images/p5.jpg') }}" alt="">
+
+
+            <div class="des5">
+                <h5>Dumbbells</h5>
+
+                <h4>13.000DA</h4>
+                <!--<div class="star">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div--->
+
+
+            </div>
+            <div class="glow-wrap5">
+                <i class="glow5"></i>
+            </div>
+            <a href="productsd/sp5.html" class="btn">View More</a>
+
+        </div>
+    </section>
+    <!--product--6-->
+    <section class="product6" id="product6">
+        <div class="pro6">
+            <img src="{{ asset('images/p6.jpg') }}" style="width:100%;" alt="">
+
+
+            <div class="des6">
+                <h5>Iron Barbell Weight</h5>
+
+                <h4>25.000DA</h4>
+                <!--<div class="star">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div> --->
+
+            </div>
+            <div class="glow-wrap6">
+                <i class="glow6"></i>
+            </div>
+            <a href="productsd/sp6.html" class="btn">View More</a>
+
+        </div>
+        </div>
+    </section>
+    <!--product--7-->
+    <section class="product7" id="product7">
+        <div class="pro7">
+            <img src="{{ asset('images/p7.jpg') }}" style="width:100%;" alt="">
+
+
+            <div class="des7">
+                <h5>Hex Dumbbells</h5>
+
+                <h4>18.000DA</h4>
+                <!--<div class="star">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div> --->
+
+            </div>
+            <div class="glow-wrap7">
+                <i class="glow7"></i>
+            </div>
+            <a href="productsd/sp7.html" class="btn">View More</a>
+
+        </div>
+        </div>
+    </section>
+    <!--product--8-->
+    <section class="product8" id="product8">
+        <div class="pro8">
+            <img src="{{ asset('images/p8.jpg') }}" style="width:100%;" alt="">
+
+
+            <div class="des8">
+                <h5>Round Dumbbells Weights</h5>
+
+                <h4>23.000DA</h4>
+                <!--<div class="star">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div> --->
+
+            </div>
+            <div class="glow-wrap8">
+                <i class="glow8"></i>
+            </div>
+            <a href="productsd/sp8.html" class="btn">View More</a>
+
+        </div>
+        </div>
+    </section>
+    <!--product--9-->
+    <section class="product9" id="product9">
+        <div class="pro9">
+            <img src="{{ asset('images/p9.jpg') }}" style="width:100%;" alt="">
+
+
+            <div class="des9">
+                <h5>Chin Pull Up Bar</h5>
+
+                <h4>15.000DA</h4>
+                <!--<div class="star">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div> --->
+
+            </div>
+            <div class="glow-wrap9">
+                <i class="glow9"></i>
+            </div>
+            <a href="productsd/sp9.html" class="btn">View More</a>
+
+        </div>
+        </div>
+    </section>
+    <!--product--10-->
+    <section class="product10" id="product10">
+        <div class="pro10">
+            <img src="{{ asset('images/p10.jpg') }}" style="width:100%;" alt="">
+
+
+            <div class="des10">
+                <h5>Weightlifting Station Wall</h5>
+
+                <h4>50.000DA</h4>
+                <!--<div class="star">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div> --->
+
+            </div>
+            <div class="glow-wrap10">
+                <i class="glow10"></i>
+            </div>
+            <a href="productsd/sp10.html" class="btn">View More</a>
+
+        </div>
+        </div>
+    </section>
+    <section class="banner" id="banner">
+        <h4>Repair Services</h4>
+        <h2>Up to<span>50% Off</span>All machines</h2>
+    </section>
+    </body>
+{% endblock %}
