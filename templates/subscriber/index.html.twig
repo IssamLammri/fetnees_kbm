@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Subscriber index{% endblock %}
+
+{% block body %}
+    <h1>Subscriber index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>LastName</th>
+                <th>FirstName</th>
+                <th>PhoneNumber</th>
+                <th>Email</th>
+                <th>RoomId</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for subscriber in subscribers %}
+            <tr>
+                <td>{{ subscriber.id }}</td>
+                <td>{{ subscriber.lastName }}</td>
+                <td>{{ subscriber.firstName }}</td>
+                <td>{{ subscriber.phoneNumber }}</td>
+                <td>{{ subscriber.email }}</td>
+                <td>{{ subscriber.roomId }}</td>
+                <td>
+                    <a href="{{ path('app_subscriber_show', {'id': subscriber.id}) }}">show</a>
+                    <a href="{{ path('app_subscriber_edit', {'id': subscriber.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_subscriber_new') }}">Create new</a>
+{% endblock %}

@@ -149,41 +149,18 @@
         <div class="box-container">
             {% for trainer in trainers %}
                 <div class="box">
-                    <img src="{{ asset('images/trainer-3.jpg') }}" alt="">
+                    {% set pathImageTrainer = 'images/trainer-' ~ trainer.id ~ '.jpg'%}
+                    <img src="{{ asset(pathImageTrainer) }}" alt="">
                     <div class="content">
-                        <span>{{ trainer }}</span>
-                        <h3>chaker herrem</h3>
+                        <span>{{ trainer.TrainerRank }}</span>
+                        <h3>{{ trainer.trainerFullName }}</h3>
                         <div class="share">
-                            <a href="https://www.facebook.com/chaker.herrem" class="fab fa-facebook-f"></a>
-                            <a href="https://www.instagram.com/chaker_hunter/" class="fa-brands fa-instagram"></a>
+                            <a href="{{ trainer.FacebookLink }}" class="fab fa-facebook-f"></a>
+                            <a href="{{ trainer.InstegramLink }}" class="fa-brands fa-instagram"></a>
                         </div>
                     </div>
                 </div>
             {% endfor %}
-            <div class="box">
-                <img src="{{ asset('images/trainer-1.jpg') }}" alt="">
-                <div class="content">
-                    <span>expert trainer</span>
-                    <h3>houssam raouf</h3>
-                    <div class="share">
-                        <a href="https://www.facebook.com/profile.php?id=100004317077929" class="fab fa-facebook-f"></a>
-                        <a href="https://www.instagram.com/houssam1312/" class="fa-brands fa-instagram"></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="box">
-                <img src="{{ asset('images/bodybuilding-3909596_1920.jpg') }}" alt="">
-                <div class="content">
-                    <span>expert trainer</span>
-                    <h3>tarek djaballah</h3>
-                    <div class="share">
-                        <a href="https://www.facebook.com/tarek.maldini" class="fab fa-facebook-f"></a>
-                        <a href="https://www.instagram.com/tarek_djaballah3/" class="fa-brands fa-instagram"></a>
-                    </div>
-                </div>
-            </div>
-
         </div>
 
     </section>
@@ -256,90 +233,21 @@
         </h1>
         <div class="swiper review_slider">
             <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <div class="box">
-                        <img src="{{ asset('images/153525485_3663239593795194_8107627339251510969_nn.jpg') }}" alt="">
-                        <h3>țặřěk djặßặłłặĥ </h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet totam ab dolorum excepturi sint similique? Deleniti odit doloremque, qui cupiditate quisquam quas, dignissimos in quam officiis amet et dolorem consequuntur.</p>
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
+                {% for review in reviews %}
+                    <div class="swiper-slide">
+                        {% set pathImageReview = 'images/review-' ~ review.id ~ '.jpg'%}
+                        <div class="box">
+                            <img src="{{ asset(pathImageReview) }}" alt="">
+                            <h3>{{ review.fullName}} </h3>
+                            <p>{{ review.Comment}}</p>
+                            <div class="stars">
+                                {% for _ in 1..review.star %}
+                                    <i class="fas fa-star"></i>
+                                {% endfor %}
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="box">
-                        <img src="{{ asset('images/75419050_776022629501800_8039543281865981952_n.jpg') }}" alt="">
-                        <h3>Abdelkrim Lemouis </h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet totam ab dolorum excepturi sint similique? Deleniti odit doloremque, qui cupiditate quisquam quas, dignissimos in quam officiis amet et dolorem consequuntur.</p>
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="box">
-                        <img src="{{ asset('images/Snapchat-1661306311.jpg') }}" alt="">
-                        <h3>bachar boumerta</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet totam ab dolorum excepturi sint similique? Deleniti odit doloremque, qui cupiditate quisquam quas, dignissimos in quam officiis amet et dolorem consequuntur.</p>
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="box">
-                        <img src="{{ asset('images/28424312_1823920841241668_2631519646087805920_o.jpg') }}" alt="">
-                        <h3>nouasria mohamed</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet totam ab dolorum excepturi sint similique? Deleniti odit doloremque, qui cupiditate quisquam quas, dignissimos in quam officiis amet et dolorem consequuntur.</p>
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="box">
-                        <img src="{{ asset('images/298472291_2272286812925199_1315632022593738581_n.jpg') }}" alt="">
-                        <h3>houssam raouf</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet totam ab dolorum excepturi sint similique? Deleniti odit doloremque, qui cupiditate quisquam quas, dignissimos in quam officiis amet et dolorem consequuntur.</p>
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="box">
-                        <img src="{{ asset('images/chm.jpg') }}" alt="">
-                        <h3>chaker herrem</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet totam ab dolorum excepturi sint similique? Deleniti odit doloremque, qui cupiditate quisquam quas, dignissimos in quam officiis amet et dolorem consequuntur.</p>
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </section>
@@ -355,28 +263,13 @@
             <h3 class="title">Every day is a chance to become better</h3>
             <p>The power of taking action each day toward our goals is immeasurable. It creates momentum and builds confidence, which can lead to even bigger changes in the long run. Every day is an opportunity to make progress, to be a little better than you were the day before.</p>
             <div class="box-container">
-                <div class="box">
-                    <h3><i class="fas fa-check"></i>body and mind</h3>
-                    <p>The debate about the mind–body connection has been around for millennia.
-
-                        From ancient philosophers and religions to modern science....</p>
-                    <a href="#https://positivepsychology.com/mind-body-connection/" class="btn">read more</a>
-                </div>
-                <div class="box">
-                    <h3><i class="fas fa-check"></i>healthy life</h3>
-                    <p>Researchers from the Harvard T.H. Chan School of Public Health conducted a massive study of the impact of health habits on life expectancy....</p>
-                    <a href="https://www.health.harvard.edu/blog/healthy-lifestyle-5-keys-to-a-longer-life-2018070514186#Healthy%20Lifestyle%20and%20Longevity" class="btn">read more</a>
-                </div>
-                <div class="box">
-                    <h3><i class="fas fa-check"></i>strategies</h3>
-                    <p>Almost anybody can safely take up walking, and light to moderate exercise is usually fine for healthy adults with no troublesome symptoms....</p>
-                    <a href="https://www.health.harvard.edu/healthbeat/10-tips-for-exercising-safely" class="btn">read more</a>
-                </div>
-                <div class="box">
-                    <h3><i class="fas fa-check"></i>workout</h3>
-                    <p>Choose a category that best suits the workout you're searching for. Once in the category, use the sort and filter options to find....</p>
-                    <a href="#workout" class="btn">read more</a>
-                </div>
+                {% for category in allCategory %}
+                    <div class="box">
+                        <h3><i class="fas fa-check"></i>{{ category.name }}</h3>
+                        <p>{{ category.description }}</p>
+                        <a href="https://positivepsychology.com/mind-body-connection/" class="btn">read more</a>
+                    </div>
+                {% endfor %}
             </div>
 
         </div>
